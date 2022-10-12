@@ -1,6 +1,6 @@
 package com.reto_3.Moto.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
 
