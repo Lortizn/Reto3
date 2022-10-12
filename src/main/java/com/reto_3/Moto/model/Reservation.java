@@ -20,8 +20,6 @@ public class Reservation  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date startDate;
     private Date devolutionDate;    
     private String status="created";
@@ -34,6 +32,9 @@ public class Reservation  {
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
+    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
+    @JsonIgnoreProperties("reservation")    
+    private Score score;
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -70,9 +71,13 @@ public class Reservation  {
     public void setClient(Client client) {
         this.client = client;
     }
-    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
-    @JsonIgnoreProperties("reservation")    
-    private Score score;
+    public Score getScore() {
+        return score;
+    }
+    public void setScore(Score score) {
+        this.score = score;
+    }
+    
     
 
 }
