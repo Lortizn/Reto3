@@ -1,5 +1,7 @@
 package com.reto_3.Moto.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -11,7 +13,7 @@ import lombok.Setter;
 @Table(name = "message")
 @Getter
 @Setter
-public class Message {
+public class Message implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
