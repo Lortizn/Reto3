@@ -236,31 +236,6 @@ function pintarRespuestaMessage(items){
    $("#resultadoMessage").append(myTable);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Reservation----------------------------------------------
 
 function guardarInformacionReservation(){
@@ -320,8 +295,4 @@ function pintarRespuestaReservation(items){
    myTable +="</table>";
    $("#resultadoReservation").append(myTable);
 }
-
-
-
-
 
