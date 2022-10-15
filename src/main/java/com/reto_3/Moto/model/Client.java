@@ -1,6 +1,5 @@
 package com.reto_3.Moto.model;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,7 +13,7 @@ import lombok.Setter;
 @Table(name = "client")
 @Getter
 @Setter
-public class Client implements Serializable  {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;

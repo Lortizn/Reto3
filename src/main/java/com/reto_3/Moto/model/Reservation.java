@@ -1,20 +1,20 @@
 package com.reto_3.Moto.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-//import lombok.Getter;
-//import lombok.Setter;
+import lombok.Getter;
+import lombok.Setter;
+
 
 @Entity
 @Table(name = "reservation")
-//@Getter
-//@Setter
-public class Reservation implements Serializable {
+@Getter
+@Setter
+public class Reservation  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
@@ -32,50 +32,6 @@ public class Reservation implements Serializable {
     private Client client;
     @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
     @JsonIgnoreProperties("reservation")    
-    private Score score;
-    public Integer getIdReservation() {
-        return idReservation;
-    }
-    public void setIdReservation(Integer idReservation) {
-        this.idReservation = idReservation;
-    }
-    public Date getStartDate() {
-        return startDate;
-    }
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-    public Date getDevolutionDate() {
-        return devolutionDate;
-    }
-    public void setDevolutionDate(Date devolutionDate) {
-        this.devolutionDate = devolutionDate;
-    }
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    public Motorbike getMotorbike() {
-        return motorbike;
-    }
-    public void setMotorbike(Motorbike motorbike) {
-        this.motorbike = motorbike;
-    }
-    public Client getClient() {
-        return client;
-    }
-    public void setClient(Client client) {
-        this.client = client;
-    }
-    public Score getScore() {
-        return score;
-    }
-    public void setScore(Score score) {
-        this.score = score;
-    }
-    
-    
+    private Score score;        
 
 }

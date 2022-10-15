@@ -1,6 +1,6 @@
 package com.reto_3.Moto.model;
 
-import java.io.Serializable;
+
 
 import javax.persistence.*;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(name = "message")
 @Getter
 @Setter
-public class Message implements Serializable {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;

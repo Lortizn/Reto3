@@ -1,6 +1,6 @@
 package com.reto_3.Moto.model;
 
-import java.io.Serializable;
+
 import java.util.List;
 
 import javax.persistence.*;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "motorbike")
 @Getter
 @Setter
-public class Motorbike implements Serializable {
+public class Motorbike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
