@@ -1,4 +1,4 @@
-const BASE_URL = 'http://132.226.254.45:8081'
+const BASE_URL = 'http://132.226.254.45:80'
 //const BASE_URL = 'http://localhost:8081'
 
 
