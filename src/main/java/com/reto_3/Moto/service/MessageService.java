@@ -21,7 +21,7 @@ public class MessageService {
     public Optional<Message> obtenerMessageId(Integer id){
         return messageRepository.obtenerMessageId(id);
     }
-public Message salvarMessage(Message message){
+    public Message salvarMessage(Message message){
         if(message.getIdMessage()==null){
             return messageRepository.salvarMessage(message);
         }
@@ -36,4 +36,13 @@ public Message salvarMessage(Message message){
         }
 
     }
+    public Boolean BorrarMessage (int id){
+        boolean d = getMessage(id).map(message-> {
+            messageRepository.BorrarMessage(message);
+            return true;
+
+        }).orElse(false);
+        return d;
+    }
 }
+

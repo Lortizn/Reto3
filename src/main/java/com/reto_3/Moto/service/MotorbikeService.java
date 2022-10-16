@@ -21,7 +21,7 @@ public class MotorbikeService {
     public Optional<Motorbike> obtenerMotorbikeId(Integer id){
         return motorbikeRepository.obtenerMotorbikeId(id);
     }
-public Motorbike salvarMotorbike(Motorbike motorbike){
+    public Motorbike salvarMotorbike(Motorbike motorbike){
         if(motorbike.getId()==null){
             return motorbikeRepository.salvarMotorbike(motorbike);
         }
@@ -35,6 +35,14 @@ public Motorbike salvarMotorbike(Motorbike motorbike){
             }
         }
 
+    }
+    public Boolean BorrarMotorbike (int id){
+        boolean d = getMotorbike(id).map(motorbike-> {
+            motorbikeRepository.BorrarMotorbike(motorbike);
+            return true;
+
+        }).orElse(false);
+        return d;
     }
     
 }

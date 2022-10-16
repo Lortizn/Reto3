@@ -25,4 +25,8 @@ public class ClientRepository {
     public Client salvarClient(Client client){
         return clientCrudRepositoryInterfaz.save(client);     
     }
+    public void BorrarClient(Client client){
+        clientCrudRepository.BorrarClient(client);
+    }
+
 }

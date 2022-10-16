@@ -34,5 +34,11 @@ public class MotorbikeController {
     public Motorbike salvarMotorbike(@RequestBody Motorbike motorbike) {
         return motorbikeService.salvarMotorbike(motorbike);
     }
-    
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean BorrarControllerMotorbiker(@PathVariable("id")int id){
+        return motorbikeService.BorrarMotorbike(id);
+    }
+
+
 }

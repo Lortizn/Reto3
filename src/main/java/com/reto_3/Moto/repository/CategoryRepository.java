@@ -25,4 +25,9 @@ public class CategoryRepository {
     public Category salvarCategory(Category category){
         return categoryCrudRepositoryInterfaz.save(category);     
     }
+
+    public void BorrarCategory(Category category){
+        categoryCrudRepository.BorrarCategory (category);
+    }
+
 }

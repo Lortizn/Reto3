@@ -38,5 +38,13 @@ public Client salvarClient(Client client){
         }
 
     }
+    public Boolean BorrarClient (int id){
+        boolean d = getClient(id).map(client-> {
+            clientRepository.BorrarClient(client);
+            return true;
+
+        }).orElse(false);
+        return d;
+    }
     
 }

@@ -25,13 +25,21 @@ public class ReservationService {
         } else {
             Optional<Reservation> reservationAuxiliar = reservationRepository
                     .obtenerReservationId(reservation.getIdReservation());
-if (reservationAuxiliar.isEmpty()) {
+    if (reservationAuxiliar.isEmpty()) {
                 return reservationRepository.salvarReservation(reservation);
             } else {
                 return reservation;
             }
         }
 
+    }
+    public Boolean BorrarReservation (int id){
+        boolean d = getReservation(id).map(reservation-> {
+            reservationRepository.BorrarReservation(reservation);
+            return true;
+
+        }).orElse(false);
+        return d;
     }
 
 

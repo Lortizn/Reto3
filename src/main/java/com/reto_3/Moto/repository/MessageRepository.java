@@ -25,4 +25,7 @@ public class MessageRepository {
     public Message salvarMessage(Message message){
         return messageCrudRepositoryInterfaz.save(message);     
     }
+    public void BorrarMessage(Message message){
+        messageCrudRepository.BorrarMessage(message);
+    }
 }

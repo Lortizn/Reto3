@@ -22,7 +22,7 @@ public class CategoryService  {
     public Optional<Category> obtenerCategoryId(Integer id){
         return categoryRepository.obtenerCategoryId(id);
     }
-public Category salvarCategory(Category category){
+    public Category salvarCategory(Category category){
         if(category.getId()==null){
             return categoryRepository.salvarCategory(category);
         }
@@ -37,4 +37,15 @@ public Category salvarCategory(Category category){
         }
 
     }
+    public Boolean BorrarCategory (int id){
+        boolean d = getCategory(id).map(category-> {
+            categoryRepository.BorrarCategory(category);
+            return true;
+
+        }).orElse(false);
+        return d;
+    }
+
+
+    
 }

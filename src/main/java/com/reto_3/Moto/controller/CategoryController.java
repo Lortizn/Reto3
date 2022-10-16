@@ -34,4 +34,12 @@ public class CategoryController {
         return categoryService.salvarCategory(category);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean BorrarControllerCategory(@PathVariable("id")int id){
+        return categoryService.BorrarCategory(id);
+    }
+
+
+
 }

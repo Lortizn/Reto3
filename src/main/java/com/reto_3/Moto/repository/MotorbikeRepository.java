@@ -25,4 +25,7 @@ public class MotorbikeRepository {
     public Motorbike salvarMotorbike(Motorbike motorbike){
         return motorbikeCrudRepositoryInterfaz.save(motorbike);     
     }
+    public void BorrarMotorbike(Motorbike motorbike){
+        motorbikeCrurRepository.BorrarMotorbike(motorbike);
+    }
 }
